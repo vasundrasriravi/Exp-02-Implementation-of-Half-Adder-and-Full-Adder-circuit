@@ -6,7 +6,7 @@
 ### AIM:
 To design a half adder and full adder circuit and verify its truth table in Quartus using Verilog programming.
 
-### Equipments Required:
+### Components Required:
 Hardware – PCs, Cyclone II , USB flasher
 Software – Quartus prime
 
@@ -73,7 +73,7 @@ assign s= a^b;
 assign c = a&b;
 endmodule
 ```
-# Full adder:
+## Full adder:
 ```
 module fulladder(a,b,c,sum,carry);
 input a,b,c;
