@@ -1,6 +1,8 @@
-# Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit
+## NAME: VASUNDRA SRI R
+## REGISTER NUMBER: 212222230168
+# Exp-03-Implementation-of-Half-Adder-and-Full-Adder-circuit
 
-# Implementation-of-Half-Adder-and-Full-Adder-circuit
+
 ### AIM:
 To design a half adder and full adder circuit and verify its truth table in Quartus using Verilog programming.
 
@@ -30,25 +32,79 @@ Sum =A’B’Cin + A’BCin’ + ABCin + AB’Cin’ = A ⊕ B ⊕ Cin Carry = A
 #### Figure -02 FULL ADDER 
 
 ### Procedure
+1. Create a New Project:
+   - Open Quartus and create a new project by selecting "File" > "New Project Wizard."
+   - Follow the wizard's instructions to set up your project, including specifying the project name, location, and target device (FPGA).
 
-Connect the supply (+5V) to the circuit
-Switch ON the main switch
-If the output is 1, then the led glows.
-### 
-Program:
-/*
+2. Create a New Design File:
+   - Once the project is created, right-click on the project name in the Project Navigator and select "Add New File."
+   - Choose "Verilog HDL File" or "VHDL File," depending on your chosen hardware description language.
+
+3. Write the Combinational Logic Code:
+   - Open the newly created Verilog or VHDL file and write the code for your combinational logic.
+     
+4. Compile the Project:
+   - To compile the project, click on "Processing" > "Start Compilation" in the menu.
+   - Quartus will analyze your code, synthesize it into a netlist, and perform optimizations based on your target FPGA device.
+
+5. Analyze and Fix Errors:*
+   - If there are any errors or warnings during the compilation process, Quartus will display them in the Messages window.
+   - Review and fix any issues in your code if necessary.
+   - View the RTL diagram.
+
+6.*Verification:
+   - Click on "File" > "New" > "Verification/Debugging Files" > "University Program VWF".
+   - Once Waveform is created Right Click on the Input/Output Panel > " Insert Node or Bus" > Click on Node Finder > Click On "List" > Select All.
+   - Give the Input Combinations according to the Truth Table amd then simulate the Output Waveform.
+
+### Program:
+```
 Program to design a half adder and full adder circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
-Logic symbol & Truthtable
-RTL realization
+Developed by: VASUNDRA SRI R
+RegisterNumber: 212222230168
+```
+## Half adder:
+```
+module EXP03(a,b,c,s);
+input a,b;
+output s,c;
+assign s= a^b;
+assign c = a&b;
+endmodule
+```
+# Full adder:
+```
+module fulladder(a,b,c,sum,carry);
+input a,b,c;
+output sum,carry;
+assign sum=a^b^c;
+assign carry=((a&b)|(b&c)|(c&a));
+endmodule
+```
 
-### Output:
-### RTL
-### TIMING DIAGRAM
+## RTL DIAGRAM:
+## Half adder:
+![Screenshot 2023-09-01 085152](https://github.com/vasundrasriravi/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119393983/2c9bd27d-a562-4742-a9c6-3eec2d321df3)
+
+## Full adder:
+![Screenshot 2023-09-01 092837](https://github.com/vasundrasriravi/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119393983/f4b63096-e292-417f-87af-180553850719)
 
 
 ### TRUTH TABLE 
+## Half adder:
+![Screenshot 2023-09-01 090446](https://github.com/vasundrasriravi/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119393983/333ae80b-3bae-499d-9fba-315b1424793c)
+
+## Full adder:
+![Screenshot 2023-09-01 090049](https://github.com/vasundrasriravi/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119393983/b8336b94-ddde-4953-ae96-1223a2d502ef)
+
+### Output:
+## Half adder:
+![Screenshot 2023-09-01 090852](https://github.com/vasundrasriravi/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119393983/bb95f8d8-27fd-4b1d-8cac-1618b036e44e)
+
+## Full adder:
+
+![WhatsApp Image 2023-09-01 at 10 03 15 AM](https://github.com/vasundrasriravi/Exp-02-Implementation-of-Half-Adder-and-Full-Adder-circuit/assets/119393983/008c5a26-399f-4d37-af79-81edbaa48856)
+
 
 ### Result:
+Thus the program to implement half adder and full adder is executed successfully.
